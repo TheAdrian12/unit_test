@@ -18,6 +18,7 @@ def test_have_atributos():
 
 def test_have_apps():
     tablet = Tablet("samnsung")
+    assert len(tablet.apps) == 0    
     app1 = App("Snapchat", 2)
     app2 = App("Chrome", 4)
     tablet.instalar(app1)
