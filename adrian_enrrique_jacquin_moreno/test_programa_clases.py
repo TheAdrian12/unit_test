@@ -30,15 +30,20 @@ def test_have_apps():
 #Test de Composicion
 
 def test_istancia_comp():
-    lenovo = Computador("lenovo", "516gb")
+    teclado2 = Teclado("Jap", False)
+    lenovo = Computador("lenovo", "516gb", teclado2)
+    assert lenovo.teclado == teclado2
     assert isinstance(lenovo.teclado, Teclado)
 
 def test_have_atributos_comp():
-    hp = Computador("hp", "400gb")
+    teclado1 = Teclado('ingles', True)
+    hp = Computador("hp", "400gb", teclado1)
     assert hp.marca == "hp"
     assert hp.almacenamiento == "400gb"
 
 def test_computadora_tiene_teclado():
-    pc = Computador("Dell", "512")
+    teclado3 = Teclado('español', True)
+    pc = Computador("Dell", "512", teclado3)
+    assert pc.teclado == teclado3
     assert hasattr(pc, "teclado")
     assert isinstance(pc.teclado, Teclado)
